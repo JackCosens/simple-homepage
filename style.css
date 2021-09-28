@@ -103,6 +103,15 @@ footer h2 {
     margin-bottom: 1%;
 }
 
+footer h2 span {
+    color: gray;
+    transition: all 500ms;
+}
+
+footer h2 span:hover {
+    color: indianred;
+}
+
 /*Compatability with Phone and Smaller Screens*/
 @media screen and (max-width: 1048px) {
     .container {
