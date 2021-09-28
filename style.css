@@ -1,0 +1,129 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0;
+}
+
+/*Navigation*/
+nav ol {
+    width: 100%;
+    display: flex;
+    padding: 2% 15% 0 15%;
+}
+
+ol {
+    list-style: none;
+}
+
+nav ol li:first-child {
+    margin-right: auto;
+}
+
+nav ol li:not(:first-child) {
+    padding-left: 25px;
+    font-size: 21px;
+}
+
+nav ol li {
+    transition: all 500ms;
+}
+
+nav ol li:hover {
+    transform: translateY(-6px);
+    color: #42b6f5;
+}
+
+/*Main Container*/
+
+.container {
+    display: flex;
+    padding: 10% 0 10% 0;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container .image img {
+    max-width: 300px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 10px solid white;
+}
+
+.container .image {
+    position: relative;
+}
+
+.container .image::before {
+    content: "";
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    background-color: #42b6f5;
+    top: 30px;
+    left: 50px;
+}
+
+.container .profile {
+    flex-grow: 1;
+    margin-right: 10%;
+    margin-top: 7%;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 45px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+p {
+    font-size: 18px;
+    font-weight: 400;
+    color: gray;
+}
+
+.blue {
+    color: #42b6f5;
+}
+
+/*Footer and Credits*/
+
+footer h2 {
+    text-align: center;
+    font-weight: 200;
+    font-size: 15px;
+    margin-bottom: 1%;
+}
+
+/*Compatability with Phone and Smaller Screens*/
+@media screen and (max-width: 1048px) {
+    .container {
+        width: 100%;
+        padding: 10% 24px 10% 24px;
+        margin-right: 0;
+        margin-left: 0;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .container .image::before {
+        left: calc(50% + 50px);
+        transform: translateX(-50%);
+    }
+
+    .container .profile {
+        margin-right: 0;
+    }
+
+    hr {
+        margin: 0 10% 0 10%;
+    }
+}
