@@ -5,6 +5,13 @@
 body {
     font-family: 'Roboto Condensed', sans-serif;
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex {
+    flex-grow: 1;
 }
 
 /*Navigation*/
@@ -75,6 +82,23 @@ nav ol li:hover {
     margin-top: 7%;
 }
 
+.container .profile #showProjects {
+    background-color: transparent;
+    border-color: transparent;
+    padding: 0;
+    border: 0;
+
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 15px;
+    transition: all 500ms;
+
+}
+
+.container .profile #showProjects:hover {
+    color: #42b6f5;
+    transition: all 500ms;
+}
+
 h1 {
     font-weight: 600;
     font-size: 45px;
@@ -106,26 +130,12 @@ p {
     color: #42b6f5;
 }
 
-/* Scroll Button */
-
-button {
-    margin-left: 50%;
-    background-color: transparent;
-    border-color: transparent;
-    border-radius: 50%;
-    color: gray;
-
-    padding: 0;
-    transform: translateX(-15px);
-
-    transition: all 500ms;
-}
-
-button:hover {
-    color: #42b6f5;
-}
 
 /* Projects Container */
+
+#modal {
+    display: none;
+}
 
 #title {
     padding-bottom: 0;
@@ -181,8 +191,7 @@ footer h2 {
     text-align: center;
     font-weight: 200;
     font-size: 15px;
-    margin-bottom: 1%;
-    
+    margin-bottom: 1%;    
 }
 
 footer h2 span {

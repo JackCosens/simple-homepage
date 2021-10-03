@@ -14,59 +14,60 @@
 
     <body>
 
-        <nav id="nav">
-            <ol>
-                <li><a href="mailto:contact@jackcosens.com"><i class="fas fa-comment-dots"></i> <span style="padding-left: 15px">Contact Me</span></a></li>
-                <li><a href="https://instagram.com/jackcosens"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="https://github.com/jackcosens"><i class="fab fa-github"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            </ol>
-        </nav>
+        <div class="flex">
+            <nav id="nav">
+                <ol>
+                    <li><a href="mailto:contact@jackcosens.com"><i class="fas fa-comment-dots"></i> <span style="padding-left: 15px">Contact Me</span></a></li>
+                    <li><a href="https://instagram.com/jackcosens"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://github.com/jackcosens"><i class="fab fa-github"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                </ol>
+            </nav>
 
-        <div class="container">
-            <div class="profile">
-                <h1>Jack Cosens.</h1>
-                <hr>
-                <p>Hello, my name is Jack. I am a freelance <span class="blue">Network and Software Engineer</span>.</br>Studying <span class="blue">Computer Science</span> at University of Liverpool, United Kingdom.</p>
-            </div>
-
-            <div class="image">
-                <img src="./assets/me.jpg">
-
-            </div>
-        </div>
-
-        <button onclick="scrollWin('projects')" class='scroll'><i class="fas fa-arrow-down"></i></button>
-
-        <div id ="title" class="container">
-            <h1>Projects.</h1>
-            <hr>
-        </div>
-
-        <div class="container" id='secondary'>
-            <div class="projects" id="projects">
-                <div class='card'>
-                    <a href="https://cosmicv.net"><img src="https://cosmicv.net/cosmicv.png"></a>
-                    <h2>CosmicV</h2>
-                    <h3>Feburary 2020 - Present</h3>
-                    <p>GTA V Multiplayer community playing host to over <span class="blue">250,000 unique users</span>, creating new and immersive minigames and experiences.</p>
+            <div class="container">
+                <div class="profile">
+                    <h1>Jack Cosens.</h1>
+                    <hr>
+                    <p>Hello, my name is Jack. I am a freelance <span class="blue">Network and Software Engineer</span>.</br>Studying <span class="blue">Computer Science</span> at University of Liverpool, United Kingdom.</p>
+                    <button id='showProjects' onClick="showProjects()"><i class="fas fa-arrow-down"></i> <span style="padding-left: 8px">Show Projects</span></button>
                 </div>
-                <div class='card'>
-                    <a href="https://kubbur.com"><img src="./assets/kubbur_png.PNG"></a>
-                    <h2>Kubbur</h2>
-                    <h3>Feburary 2020 - Present</h3>
-                    <p>A KVM Group Limited service offering <span class="blue">competitively priced hosting solutions</span> in the gaming and performance VM Industry.</p>
-                </div>
-                <div class='card'>
-                    <a href="https://discord.gg/blairsbrainiacs"><img src="./assets/discord.png"></a>
-                    <h2>Blair's Brainiacs</h2>
-                    <h3>March 2021 - August 2021</h3>
-                    <p>Creating <span class="blue">scalable moderation solutions</span> for the United Kingdoms biggest educational discord community.</p>
+
+                <div class="image">
+                    <img src="./assets/me.jpg">
+
                 </div>
             </div>
-        </div>
 
-        <button onclick="scrollWin('nav')" class='scroll'><i class="fas fa-arrow-up"></i></button>
+            <div id="modal">
+                <div id ="title" class="container">
+                    <h1>Projects.</h1>
+                    <hr>
+                </div>
+
+                <div class="container" id='secondary'>
+                    <div class="projects" id="projects">
+                        <div class='card'>
+                            <a href="https://cosmicv.net"><img src="https://cosmicv.net/cosmicv.png"></a>
+                            <h2>CosmicV</h2>
+                            <h3>Feburary 2020 - Present</h3>
+                            <p>GTA V Multiplayer community playing host to over <span class="blue">250,000 unique users</span>, creating new and immersive minigames and experiences.</p>
+                        </div>
+                        <div class='card'>
+                            <a href="https://kubbur.com"><img src="./assets/kubbur_png.PNG"></a>
+                            <h2>Kubbur</h2>
+                            <h3>Feburary 2020 - Present</h3>
+                            <p>A KVM Group Limited service offering <span class="blue">competitively priced hosting solutions</span> in the gaming and performance VM Industry.</p>
+                        </div>
+                        <div class='card'>
+                            <a href="https://discord.gg/blairsbrainiacs"><img src="./assets/discord.png"></a>
+                            <h2>Blair's Brainiacs</h2>
+                            <h3>March 2021 - August 2021</h3>
+                            <p>Creating <span class="blue">scalable moderation solutions</span> for the United Kingdoms biggest educational discord community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <footer>
             <h2>Copyright 2021 &copy; Jack Cosens<br>Made with <span class="love"><i class="fas fa-heart"></i></span> by myself (with a bit of tutoring from <a class="blue" href="https://github.com/mathhulk">Matt</a>).</h2>
@@ -74,9 +75,23 @@
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
     <script>
-        function scrollWin(id) {
-            var element = document.getElementById(id);
-            element.scrollIntoView({behavior: "smooth", inline: "nearest"});
+        let display = false
+        function showProjects() {
+            
+            var element = document.getElementById('modal');
+            var button = document.getElementById('showProjects')
+
+            if (!display) {
+                display = true;
+                element.style.setProperty('display', 'block');
+                button.innerHTML = `<i class="fas fa-arrow-up"></i> <span style="padding-left: 15px">Hide Projects</span>`;
+                element.scrollIntoView({behavior: "smooth", inline: "nearest"});
+            } else {
+                display = false;
+                element.style.setProperty('display', 'none');
+                button.innerHTML = `<i class="fas fa-arrow-down"></i> <span style="padding-left: 15px">Show Projects</span>`;
+            }
+            
         }   
     </script>
 </html>
