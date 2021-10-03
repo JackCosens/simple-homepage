@@ -40,7 +40,7 @@ nav ol li:hover {
 
 .container {
     display: flex;
-    padding: 10% 0 10% 0;
+    padding: 10% 0 5% 0;
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
@@ -80,6 +80,18 @@ h1 {
     font-size: 45px;
 }
 
+h3 {
+    font-size: 15px;
+    color: gray;
+    margin: 0;
+    padding: 0;
+}
+
+h3:hover {
+    color: #42b6f5;
+    transition: all 500ms;
+}
+
 a {
     color: inherit;
     text-decoration: none;
@@ -94,6 +106,71 @@ p {
     color: #42b6f5;
 }
 
+/* Scroll Button */
+
+button {
+    margin-left: 50%;
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 50%;
+    color: gray;
+
+    padding: 0;
+    transform: translateX(-15px);
+
+    transition: all 500ms;
+}
+
+button:hover {
+    color: #42b6f5;
+}
+
+/* Projects Container */
+
+#title {
+    padding-bottom: 0;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+#secondary {
+    padding-top: 0;
+}
+
+.container .projects h2 {
+    margin-bottom: 2%;
+}
+
+.container .projects {
+    /* background-color: rgba(66, 182, 245, 0.4); */
+    border-radius: 6px;
+    min-width: 100%;
+
+    display: inline-flex;
+    flex-grow: 1;
+}
+
+.container .projects .card {
+    margin-left: 20px;
+    width: 31%;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.container .projects .card img {
+    max-width: 250px;
+    max-height: 250px;
+
+    transition: all 500ms;
+}
+
+.container .projects .card img:hover {
+    /* -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    /* filter: grayscale(0%); */
+    transform: translateY(-8px);
+}
+
 /*Footer and Credits*/
 
 footer h2 {
@@ -101,6 +178,7 @@ footer h2 {
     font-weight: 200;
     font-size: 15px;
     margin-bottom: 1%;
+    
 }
 
 footer h2 span {
@@ -130,6 +208,22 @@ footer h2 span:hover {
 
     .container .profile {
         margin-right: 0;
+    }
+
+    .container .projects {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .container .projects .card {
+        margin-left: auto;
+        margin-right: auto; 
+        text-align: center;
+    }
+
+    .container .projects .card img {
+        max-width: 100%;
+        max-height: 100%;
     }
 
     hr {
