@@ -134,6 +134,12 @@ button:hover {
     width: 100%;
 }
 
+#title hr {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #secondary {
     padding-top: 0;
 }
@@ -143,19 +149,16 @@ button:hover {
 }
 
 .container .projects {
-    /* background-color: rgba(66, 182, 245, 0.4); */
-    border-radius: 6px;
     min-width: 100%;
-
     display: inline-flex;
-    flex-grow: 1;
 }
 
 .container .projects .card {
     margin-left: 20px;
-    width: 31%;
     text-align: center;
     word-wrap: break-word;
+    width: 31%;
+    flex-grow: 1;
 }
 
 .container .projects .card img {
@@ -163,6 +166,7 @@ button:hover {
     max-height: 250px;
 
     transition: all 500ms;
+    flex-grow: 1;
 }
 
 .container .projects .card img:hover {
